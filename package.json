@@ -1,0 +1,10 @@
+{
+  "dependencies": {
+    "microlight": "^0.0.7"
+  },
+  "scripts": {
+    "dist": "node vendor-dist.js"
+  },
+  "type": "module",
+  "private": true
+}
