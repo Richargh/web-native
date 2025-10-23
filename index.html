@@ -65,6 +65,27 @@ Yes, viewing the source is a good idea for this site
 
     <article>
         <h2>Css Features</h2>
+        <section>
+            <h3>Cascade layers</h3>
+            <p>
+                The <code class="microlight">@layer</code> CSS at-rule avoids specificity conflicts by providing
+                priority levels for different groups of CSS rules, such as low-priority styles like resets, and
+                high-priority styles like UI components.
+            </p>
+            <baseline-status featureid="cascade-layers"></baseline-status>
+            <pre>
+                <code translate="no" dir="ltr" class="microlight">
+/* establish a layer order up-front, from lowest to highest priority */
+@layer reset, defaults, patterns, components, utilities, overrides;
+
+/* import local stylesheets into a layer */
+@import "default.css" layer(defaults);
+
+/* import remote stylesheets into a layer (dot syntax represents nesting) */
+@import url('framework.css') layer(components.framework);
+                </code>
+            </pre>
+        </section>
         <section id="cross-document-view-transitions">
             <h3>Cross-Document View Transitions</h3>
             <p>
