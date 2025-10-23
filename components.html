@@ -55,6 +55,33 @@ Yes, viewing the source is a good idea for this site
         <p>
             Html has a lot of great built-in components.
         </p>
+        <section>
+            <h3><a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/details">&lt;details&gt;</a></h3>
+            <p>
+                The <code class="microlight">&lt;details&gt;</code> element is a disclosure widget which can be expanded to reveal additional content. When closed, only the nested <code class="microlight">&lt;summary&gt;</code> element is visible.
+            </p>
+            <baseline-status featureid="details"></baseline-status>
+            <details open>
+                <summary>A summary here</summary>
+                <p>A long-winded text that is hidden when you click on the summary.</p>
+            </details>
+        </section>
+        <section>
+            <h3>Mutually exclusive <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/details#name">&lt;details&gt;</a></h3>
+            <p>
+                Multiple <code class="microlight">&lt;details&gt;</code> elements which use the same name attribute are mutually exclusive.
+                When one member of the group is opened, all other members are closed.
+            </p>
+            <baseline-status featureid="details-name"></baseline-status>
+            <details name="a-name">
+                <summary>Element one</summary>
+                <p>Hidden text for one.</p>
+            </details>
+            <details name="a-name">
+                <summary>Element two</summary>
+                <p>Hidden text for two.</p>
+            </details>
+        </section>
     </article>
     <article>
         <h2>Css Components</h2>
