@@ -60,6 +60,21 @@ Yes, viewing the source is a good idea for this site
             </p>
             <baseline-status featureid="import-maps"></baseline-status>
         </section>
+        <section id="intl-relative-time-format">
+            <h3>Intl.RelativeTimeFormat</h3>
+            <p>
+                The <code class="microlight">Intl.RelativeTimeFormat</code> object enables language-sensitive relative
+                time formatting.
+            </p>
+            <baseline-status featureid="intl-relative-time-format"></baseline-status>
+            <pre>
+                <code translate="no" dir="ltr" class="microlight">
+const rtf1 = new Intl.RelativeTimeFormat("en", { style: "short" });
+
+console.log(rtf1.format(3, "quarter")); // "in 3 qtrs."
+                </code>
+            </pre>
+        </section>
         <section>
             <h3>JavaScript Modules</h3>
             <p>
@@ -75,7 +90,8 @@ Yes, viewing the source is a good idea for this site
             <h3>Single-document View Transitions</h3>
             <p>
                 Aka the view transitions that work with JavaScript and the <code>startViewTransition()</code> method.
-                Separate feature from the <a href="./css-features.html#cross-document-view-transitions">cross-document view transitions</a>.
+                Separate feature from the <a href="./css-features.html#cross-document-view-transitions">cross-document
+                view transitions</a>.
             </p>
             <baseline-status featureid="view-transitions"></baseline-status>
             A longer code-example might look like this: <br>
