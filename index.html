@@ -38,12 +38,13 @@
     <article>
         <h2>Overview</h2>
         <p>
-        This page keeps track of (some) of the possibilities of the modern web.
-        The web is constantly evolving so do not expect every feature to show up here.
-        I try to show the most important ones though.
+            This page keeps track of (some) of the possibilities of the modern web.
+            The web is constantly evolving so do not expect every feature to show up here.
+            I try to show the most important ones though.
         </p>
         <p>
-            <a href="https://webstatus.dev/">Webstatus</a> keeps track of which features are available in the common browser out there.
+            <a href="https://webstatus.dev/">Webstatus</a> keeps track of which features are available in the common
+            browser out there.
         </p>
     </article>
     <article>
@@ -95,6 +96,113 @@ const isMatch = pattern.test(location.href);
                 </code>
             </pre>
             </section>
+        </section>
+    </article>
+    <article>
+        <h2>Web Components</h2>
+        <p>
+            <a href="https://developer.mozilla.org/en-US/docs/Web/API/Web_components">Web Components</a> are a bit
+            special because they let users define new components that extend the existing ones like
+            <code>&lt;dialog&gt;</code>.
+            As such they have an html part for declaration, a JavaScript part for behavior and a css part.
+            Their functionality can even be encapsulated away from the rest of your code.
+        </p>
+        <p>
+            The three parts of web components are:
+        <dl>
+            <dt>Custom Elements</dt>
+            <dd>A set of JavaScript APIs that allow you to define custom elements and their behavior</dd>
+            <dt>Shadow DOM</dt>
+            <dd>
+                A set of APIs for attaching an encapsulated "shadow" DOM tree to an element.
+                Before declarative shadow dom this was only possible with JavaScript.
+            </dd>
+            <dt>HTML templates</dt>
+            <dd>The <code>&lt;template&gt;</code> and <code>&lt;slot&gt;</code> elements enable you to write markup
+                templates that are not displayed in the rendered page. These can then be reused multiple times as the
+                basis of a custom element's structure.
+            </dd>
+        </dl>
+        </p>
+        <p>
+            They have also been evolving over time and require less and less JavaScript.
+        </p>
+        <p>
+            A code-example of all three elements together (adapted from <a href="https://webcomponents.guide/">Web
+            Components Guide</a>):
+        </p>
+        <pre>
+                <code translate="no" dir="ltr">
+// Create a new stylesheet that can be shared by all `my-element`
+const styles = new CSSStyleSheet()
+styles.replaceSync(`
+  :host {
+    font-size: var(--font-size-3);
+    font-style: italic;
+  }
+`)
+
+// Define the MyElement
+class MyElement extends HTMLElement {
+  static define(tag = "my-element") {
+    customElements.define(tag, this)
+  }
+
+  // Give this element its own encapsulated DOM
+  shadowRoot = this.attachShadow({ mode: "open" })
+
+  connectedCallback() {
+    console.log("attached to the DOM");
+    // Add the shared styles
+    this.shadowRoot.adoptedStyleSheets = [styles]
+  }
+}
+
+// Register the element with the Custom Element Registry
+MyElement.define();
+                </code>
+            </pre>
+        <section>
+            <h3>Autonomous custom elements</h3>
+            <p>
+                Autonomous custom elements are HTML elements with a hyphenated tag name (like <code>&lt;example-element&gt;</code>)
+                that have behaviors you define.
+            </p>
+            <baseline-status featureid="autonomous-custom-elements"></baseline-status>
+        </section>
+        <section>
+            <h3>Shadow DOM</h3>
+            <p>
+                Shadow DOM allows you to attach encapsulated "shadow" DOM trees to elements.
+                A shadow DOM tree is a separate component, isolated from the scripts and styles in other parts of the
+                document.
+            </p>
+            <baseline-status featureid="shadow-dom"></baseline-status>
+        </section>
+        <section>
+            <h3>Declarative Shadow DOM</h3>
+            <p>
+                The shadowrootmode attribute on <code>&lt;template&gt;</code> creates a shadow root without the use of
+                JavaScript.
+                It is a declarative alternative to the <code>attachShadow()</code> method.
+            </p>
+            <baseline-status featureid="declarative-shadow-dom"></baseline-status>
+        </section>
+        <section>
+            <h3><code>&lt;template&gt;</code></h3>
+            <p>
+                The <code>&lt;template&gt;</code> HTML element holds HTML fragments which you can clone and insert into
+                the document using JavaScript.
+            </p>
+            <baseline-status featureid="template"></baseline-status>
+        </section>
+        <section>
+            <h3><code>&lt;slot&gt;</code></h3>
+            <p>
+                The <code>&lt;slot&gt;</code> HTML element is a placeholder inside a web component where consumers of
+                the component can insert their own markup.
+            </p>
+            <baseline-status featureid="slot"></baseline-status>
         </section>
     </article>
 </main>
