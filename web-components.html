@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Collection of: Web Native Html, CSS, JavaScript</title>
+    <link rel="stylesheet" href="css/app.css">
+    <meta name="description" content="">
+
+    <meta property="og:title" content="">
+    <meta property="og:type" content="">
+    <meta property="og:url" content="">
+    <meta property="og:image" content="">
+    <meta property="og:image:alt" content="">
+
+    <link rel="icon" href="/favicon.ico" sizes="any">
+    <link rel="icon" href="/icon.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="icon.png">
+
+    <link rel="manifest" href="site.webmanifest">
+    <meta name="theme-color" content="#fafafa">
+    <script type="importmap">
+        {
+          "imports": {
+            "app/": "./js/app/",
+            "vendor/": ".js/vendor/"
+          }
+        }
+    </script>
+    <script src="js/app.js" type="module"></script>
+    <script
+            src="https://cdn.jsdelivr.net/npm/baseline-status@1/baseline-status.min.js"
+            type="module"
+            integrity="sha256-DmwRafkcuH0kwOXNDkdo7XTI4ajhQ5LGo8dWf11Z2mg="
+    ></script>
+    <script src="js/vendor/microlight.min.js"></script>
+</head>
+
+<body>
+<!-----------------------------------------------------
+Yes, viewing the source is a good idea for this site
+---------------------------------------------------!-->
+<header>
+    <nav>
+        <a href="./index.html">Home</a>
+    </nav>
+</header>
+<main>
+    <article>
+        <h2>Web Components</h2>
+        <p>
+            <a href="https://developer.mozilla.org/en-US/docs/Web/API/Web_components">Web Components</a> are a bit
+            special because they let users define new components that extend the existing ones like
+            <code>&lt;dialog&gt;</code>.
+            As such they have an html part for declaration, a JavaScript part for behavior and a css part.
+            Their functionality can even be encapsulated away from the rest of your code.
+        </p>
+        <p>
+            The three parts of web components are:
+        <dl>
+            <dt>Custom Elements</dt>
+            <dd>A set of JavaScript APIs that allow you to define custom elements and their behavior</dd>
+            <dt>Shadow DOM</dt>
+            <dd>
+                A set of APIs for attaching an encapsulated "shadow" DOM tree to an element.
+                Before declarative shadow dom this was only possible with JavaScript.
+            </dd>
+            <dt>HTML templates</dt>
+            <dd>The <code>&lt;template&gt;</code> and <code>&lt;slot&gt;</code> elements enable you to write markup
+                templates that are not displayed in the rendered page. These can then be reused multiple times as the
+                basis of a custom element's structure.
+            </dd>
+        </dl>
+        </p>
+        <p>
+            They have also been evolving over time and require less and less JavaScript.
+        </p>
+        <p>
+            A code-example of all three elements together (adapted from <a href="https://webcomponents.guide/">Web
+            Components Guide</a>):
+        </p>
+        <pre>
+                <code translate="no" dir="ltr" class="microlight">
+// Create a new stylesheet that can be shared by all `my-element`
+const styles = new CSSStyleSheet()
+styles.replaceSync(`
+  :host {
+    font-size: var(--font-size-3);
+    font-style: italic;
+  }
+`)
+
+// Define the MyElement
+class MyElement extends HTMLElement {
+  static define(tag = "my-element") {
+    customElements.define(tag, this)
+  }
+
+  // Give this element its own encapsulated DOM
+  shadowRoot = this.attachShadow({ mode: "open" })
+
+  connectedCallback() {
+    console.log("attached to the DOM");
+    // Add the shared styles
+    this.shadowRoot.adoptedStyleSheets = [styles]
+  }
+}
+
+// Register the element with the Custom Element Registry
+MyElement.define();
+                </code>
+            </pre>
+        <section>
+            <h3>Autonomous custom elements</h3>
+            <p>
+                Autonomous custom elements are HTML elements with a hyphenated tag name (like <code>&lt;example-element&gt;</code>)
+                that have behaviors you define.
+            </p>
+            <baseline-status featureid="autonomous-custom-elements"></baseline-status>
+        </section>
+        <section>
+            <h3>Shadow DOM</h3>
+            <p>
+                Shadow DOM allows you to attach encapsulated "shadow" DOM trees to elements.
+                A shadow DOM tree is a separate component, isolated from the scripts and styles in other parts of the
+                document.
+            </p>
+            <baseline-status featureid="shadow-dom"></baseline-status>
+        </section>
+        <section>
+            <h3>Declarative Shadow DOM</h3>
+            <p>
+                The shadowrootmode attribute on <code>&lt;template&gt;</code> creates a shadow root without the use of
+                JavaScript.
+                It is a declarative alternative to the <code>attachShadow()</code> method.
+            </p>
+            <baseline-status featureid="declarative-shadow-dom"></baseline-status>
+        </section>
+        <section>
+            <h3><code>&lt;template&gt;</code></h3>
+            <p>
+                The <code>&lt;template&gt;</code> HTML element holds HTML fragments which you can clone and insert into
+                the document using JavaScript.
+            </p>
+            <baseline-status featureid="template"></baseline-status>
+        </section>
+        <section>
+            <h3><code>&lt;slot&gt;</code></h3>
+            <p>
+                The <code>&lt;slot&gt;</code> HTML element is a placeholder inside a web component where consumers of
+                the component can insert their own markup.
+            </p>
+            <baseline-status featureid="slot"></baseline-status>
+        </section>
+    </article>
+</main>
+</body>
+
+</html>

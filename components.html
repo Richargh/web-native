@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Collection of: Web Native Html, CSS, JavaScript</title>
+    <link rel="stylesheet" href="css/app.css">
+    <meta name="description" content="">
+
+    <meta property="og:title" content="">
+    <meta property="og:type" content="">
+    <meta property="og:url" content="">
+    <meta property="og:image" content="">
+    <meta property="og:image:alt" content="">
+
+    <link rel="icon" href="/favicon.ico" sizes="any">
+    <link rel="icon" href="/icon.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="icon.png">
+
+    <link rel="manifest" href="site.webmanifest">
+    <meta name="theme-color" content="#fafafa">
+    <script type="importmap">
+        {
+          "imports": {
+            "app/": "./js/app/",
+            "vendor/": ".js/vendor/"
+          }
+        }
+    </script>
+    <script src="js/app.js" type="module"></script>
+    <script
+            src="https://cdn.jsdelivr.net/npm/baseline-status@1/baseline-status.min.js"
+            type="module"
+            integrity="sha256-DmwRafkcuH0kwOXNDkdo7XTI4ajhQ5LGo8dWf11Z2mg="
+    ></script>
+    <script src="js/vendor/microlight.min.js"></script>
+</head>
+
+<body>
+<!-----------------------------------------------------
+Yes, viewing the source is a good idea for this site
+---------------------------------------------------!-->
+<header>
+    <nav>
+        <a href="./index.html">Home</a>
+    </nav>
+</header>
+<main>
+    <article>
+        <h2>Html Components</h2>
+        <p>
+            Html has a lot of great built-in components.
+        </p>
+    </article>
+    <article>
+        <h2>Css Components</h2>
+        <p>
+            Components only made via CSS.
+        </p>
+        <section>
+            <h3>Gallery</h3>
+            <div class="scroll-gallery">
+                <img src="./img/box-blue.png"
+                     alt="Blue Box"
+                     width="285"
+                     height="285"
+                     loading="lazy">
+                <img src="./img/box-green.png"
+                     alt="Green Box"
+                     width="285"
+                     height="285"
+                     loading="lazy">
+                <img src="./img/box-orange.png"
+                     alt="Orange Box"
+                     width="285"
+                     height="285"
+                     loading="lazy">
+                <img src="./img/box-purple.png"
+                     alt="Purple Box"
+                     width="285"
+                     height="285"
+                     loading="lazy">
+                <img src="./img/box-red.png"
+                     alt="Red Box"
+                     width="285"
+                     height="285"
+                     loading="lazy">
+            </div>
+        </section>
+    </article>
+    <article>
+        <h2>Web Components</h2>
+        <p>
+            Web Components can add components to html that are not there yet.
+            You can use the <a href="./web-components.html">available features</a> to write one yourself,
+            use a community-supplied standalone (see below)
+            or use a web component library:
+        </p>
+        <ul>
+            <li><a href="https://webawesome.com/">WebAwesome (previously Shoelace)</a></li>
+            <li><a href="https://quietui.org/components">QuietUI</a></li>
+        </ul>
+    </article>
+</main>
+</body>
+
+</html>

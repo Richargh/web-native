@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Collection of: Web Native Html, CSS, JavaScript</title>
+    <link rel="stylesheet" href="css/app.css">
+    <meta name="description" content="">
+
+    <meta property="og:title" content="">
+    <meta property="og:type" content="">
+    <meta property="og:url" content="">
+    <meta property="og:image" content="">
+    <meta property="og:image:alt" content="">
+
+    <link rel="icon" href="/favicon.ico" sizes="any">
+    <link rel="icon" href="/icon.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="icon.png">
+
+    <link rel="manifest" href="site.webmanifest">
+    <meta name="theme-color" content="#fafafa">
+    <script type="importmap">
+        {
+          "imports": {
+            "app/": "./js/app/",
+            "vendor/": ".js/vendor/"
+          }
+        }
+    </script>
+    <script src="js/app.js" type="module"></script>
+    <script
+            src="https://cdn.jsdelivr.net/npm/baseline-status@1/baseline-status.min.js"
+            type="module"
+            integrity="sha256-DmwRafkcuH0kwOXNDkdo7XTI4ajhQ5LGo8dWf11Z2mg="
+    ></script>
+    <script src="js/vendor/microlight.min.js"></script>
+</head>
+
+<body>
+<!-----------------------------------------------------
+Yes, viewing the source is a good idea for this site
+---------------------------------------------------!-->
+<header>
+    <nav>
+        <a href="./index.html">Home</a>
+    </nav>
+</header>
+<main>
+    <article>
+        <h2>JavaScript Features</h2>
+        <section id="import-maps">
+            <h3>Import maps</h3>
+            <p>
+                A <code>&lt;script type="importmap"&gt;</code> HTML element provides an import map as a JSON string.
+                An import map controls how the browser should resolve module specifiers when importing JavaScript
+                modules.
+            </p>
+            <baseline-status featureid="import-maps"></baseline-status>
+        </section>
+        <section>
+            <h3>JavaScript Modules</h3>
+            <p>
+                JavaScript modules allow code to be organized into reusable units.
+                Modules use import to load other modules and export to declare what is available to import from other
+                modules.
+                In HTML, modules are loaded with <code>&lt;script type="module"&gt;</code>.
+                Pairs great with <a href="#import-maps">Import Maps</a>.
+            </p>
+            <baseline-status featureid="js-modules"></baseline-status>
+        </section>
+        <section id="single-document-view-transitions">
+            <h3>Single-document View Transitions</h3>
+            <p>
+                Aka the view transitions that work with JavaScript and the <code>startViewTransition()</code> method.
+                Separate feature from the <a href="./css-features.html#cross-document-view-transitions">cross-document view transitions</a>.
+            </p>
+            <baseline-status featureid="view-transitions"></baseline-status>
+            A longer code-example might look like this: <br>
+            <pre>
+                <code translate="no" dir="ltr" class="microlight">
+function handleClick(e) {
+    // Fallback for browsers that don't support this API:
+    if (!document.startViewTransition) {
+    updateTheDOMSomehow();
+    return;
+    }
+
+    // With a View Transition:
+    document.startViewTransition(() => updateTheDOMSomehow());
+}
+                </code>
+            </pre>
+        </section>
+        <section>
+            <h3>Temporal</h3>
+            <p>
+                The Temporal API allows you to work with dates, times, time zones, and durations.
+                It fixes a lot of things that are broken in the current Date Api.
+                If you believe the Date Api is not broken, try winning <a href="https://jsdate.wtf/">jsdate.wtf</a>.
+                A <a href="https://www.npmjs.com/package/temporal-polyfill">polyfill</a> is available.
+            </p>
+            <baseline-status featureid="temporal"></baseline-status>
+            <pre>
+                <code translate="no" dir="ltr" class="microlight">
+// parse
+const isoString = "2025-10-23T19:00:00Z";
+const instant = Temporal.Instant.from(isoString);
+const zonedDateTime = instant.toZonedDateTimeISO('Africa/Johannesburg');
+// now but zoned
+const zonedDateTime = Temporal.Now.zonedDateTimeISO();
+                </code>
+            </pre>
+        </section>
+        <section>
+            <h3>URLPattern Api</h3>
+            <p>
+                A standardized, powerful, and interoperable solution to react to Url changes.
+            </p>
+            <baseline-status featureid="urlpattern"></baseline-status>
+            <p>
+                A code-example:
+            </p>
+            <pre>
+                <code translate="no" dir="ltr" class="microlight">
+const pattern = new URLPattern({ pathname: "/users/:id" });
+const isMatch = pattern.test(location.href);
+                </code>
+            </pre>
+        </section>
+    </article>
+</main>
+</body>
+
+</html>

@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Collection of: Web Native Html, CSS, JavaScript</title>
+    <link rel="stylesheet" href="css/app.css">
+    <meta name="description" content="">
+
+    <meta property="og:title" content="">
+    <meta property="og:type" content="">
+    <meta property="og:url" content="">
+    <meta property="og:image" content="">
+    <meta property="og:image:alt" content="">
+
+    <link rel="icon" href="/favicon.ico" sizes="any">
+    <link rel="icon" href="/icon.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="icon.png">
+
+    <link rel="manifest" href="site.webmanifest">
+    <meta name="theme-color" content="#fafafa">
+    <script type="importmap">
+        {
+          "imports": {
+            "app/": "./js/app/",
+            "vendor/": ".js/vendor/"
+          }
+        }
+    </script>
+    <script src="js/app.js" type="module"></script>
+    <script
+            src="https://cdn.jsdelivr.net/npm/baseline-status@1/baseline-status.min.js"
+            type="module"
+            integrity="sha256-DmwRafkcuH0kwOXNDkdo7XTI4ajhQ5LGo8dWf11Z2mg="
+    ></script>
+    <script src="js/vendor/microlight.min.js"></script>
+</head>
+
+<body>
+<!-----------------------------------------------------
+Yes, viewing the source is a good idea for this site
+---------------------------------------------------!-->
+<header>
+    <nav>
+        <a href="./index.html">Home</a>
+    </nav>
+</header>
+<main>
+    <article>
+        <h2>Css Features</h2>
+        <section>
+            <h3>Cascade layers</h3>
+            <p>
+                The <code class="microlight">@layer</code> CSS at-rule avoids specificity conflicts by providing
+                priority levels for different groups of CSS rules, such as low-priority styles like resets, and
+                high-priority styles like UI components.
+            </p>
+            <baseline-status featureid="cascade-layers"></baseline-status>
+            <pre>
+                <code translate="no" dir="ltr" class="microlight">
+/* establish a layer order up-front, from lowest to highest priority */
+@layer reset, defaults, patterns, components, utilities, overrides;
+
+/* import local stylesheets into a layer */
+@import "default.css" layer(defaults);
+
+/* import remote stylesheets into a layer (dot syntax represents nesting) */
+@import url('framework.css') layer(components.framework);
+                </code>
+            </pre>
+        </section>
+        <section id="cross-document-view-transitions">
+            <h3>Cross-Document View Transitions</h3>
+            <p>
+                The view transitions that work with <code>@view-transition</code> CSS rule sets.
+                Separate feature from the <a href="./js-features.html#single-document-view-transitions">single-document view
+                transitions</a>.
+            </p>
+            <baseline-status featureid="cross-document-view-transitions"></baseline-status>
+        </section>
+    </article>
+</main>
+</body>
+
+</html>
