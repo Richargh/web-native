@@ -35,13 +35,18 @@
     </nav>
 </header>
 <main>
-    <section>
-        <h2>Single-document View Transitions</h2>
-        Aka the view transitions that work with JavaScript and the <code>startViewTransition()</code> method.
-        <baseline-status featureid="view-transitions"></baseline-status>
-        A longer code-example might look like this: <br>
-        <pre>
-            <code translate="no" dir="ltr">
+    <article>
+        <h2>Html Features</h2>
+    </article>
+    <article>
+        <h2>Css Features</h2>
+        <section>
+            <h3>Single-document View Transitions</h3>
+            Aka the view transitions that work with JavaScript and the <code>startViewTransition()</code> method.
+            <baseline-status featureid="view-transitions"></baseline-status>
+            A longer code-example might look like this: <br>
+            <pre>
+                <code translate="no" dir="ltr">
 function handleClick(e) {
     // Fallback for browsers that don't support this API:
     if (!document.startViewTransition) {
@@ -52,15 +57,19 @@ function handleClick(e) {
     // With a View Transition:
     document.startViewTransition(() => updateTheDOMSomehow());
 }
-            </code>
-        </pre>
-    </section>
-    <section>
-        <h2>Cross-Document View Transitions</h2>
-        aka the view transitions that work with <code>@view-transition</code> CSS rule sets.
-        <baseline-status featureid="cross-document-view-transitions"></baseline-status>
-        <a href="cross-document-view-transition1.html">View Transition</a>
-    </section>
+                </code>
+            </pre>
+        </section>
+        <section>
+            <h3>Cross-Document View Transitions</h3>
+            aka the view transitions that work with <code>@view-transition</code> CSS rule sets.
+            <baseline-status featureid="cross-document-view-transitions"></baseline-status>
+            <a href="cross-document-view-transition1.html">View Transition</a>
+        </section>
+    </article>
+    <article>
+        <h2>JavaScript Features</h2>
+    </article>
 </main>
 </body>
 
