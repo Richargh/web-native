@@ -69,6 +69,22 @@ function handleClick(e) {
     </article>
     <article>
         <h2>JavaScript Features</h2>
+        <section>
+            <h3>URLPattern</h3>
+            aka the view transitions that work with <code>@view-transition</code> CSS rule sets.
+            <section>
+                <h3>URLPattern Api</h3>
+                A standardized, powerful, and interoperable solution to react to Url changes.
+                <baseline-status featureid="urlpattern"></baseline-status>
+                A code-example: <br>
+                <pre>
+                <code translate="no" dir="ltr">
+const pattern = new URLPattern({ pathname: "/users/:id" });
+const isMatch = pattern.test(location.href);
+                </code>
+            </pre>
+            </section>
+        </section>
     </article>
 </main>
 </body>
