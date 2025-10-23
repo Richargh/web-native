@@ -81,6 +81,27 @@ Yes, viewing the source is a good idea for this site
             </p>
             <baseline-status featureid="cross-document-view-transitions"></baseline-status>
         </section>
+        <section id="nesting">
+            <h3>Nesting</h3>
+            <p>
+                CSS nesting allows for shorter selectors, easier reading, and more modularity by nesting rules inside others.
+                Standard CSS selectors can be used, but also the new The <code class="microlight">&</code> nesting selector.
+            </p>
+            <baseline-status featureid="nesting"></baseline-status>
+            <pre>
+                <code translate="no" dir="ltr" class="microlight">
+.a {
+  /* styles for element with class="a" */
+  .b {
+    /* styles for element with class="b" which is a descendant of class="a" */
+  }
+  &.b {
+    /* styles for element with class="a b" */
+  }
+}
+                </code>
+            </pre>
+        </section>
     </article>
 </main>
 </body>
