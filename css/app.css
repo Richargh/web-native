@@ -1,35 +1,8 @@
-html {
-    box-sizing: border-box;
-    max-width: 70ch;
-    margin: auto;
-}
+@charset "UTF-8";
 
-*, *:before, *:after {
-    box-sizing: inherit;
-}
+/* establish a layer order up-front, from lowest to highest priority */
+@layer app;
+@layer app.reset, app.defaults, app.components, app.utilities, app.overrides;
 
-body {
-    background-color: lightgreen;
-}
-
-h1, h2, h3, h4, h5, h6 {
-    font-family: sans-serif;
-}
-
-img {
-    aspect-ratio: 16 / 9;
-    max-width: 100%;
-    height: auto;
-}
-
-.button {
-    transition: all 0.3s ease;
-}
-.button:hover {
-    transform: scale(1.05);
-    background-color: #2FB38D;
-}
-
-@view-transition {
-    navigation: auto;
-}
+@import "reset.css" layer(app.reset);
+@import "defaults.css" layer(app.defaults);
