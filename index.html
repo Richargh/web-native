@@ -91,13 +91,23 @@ function handleClick(e) {
     </article>
     <article>
         <h2>JavaScript Features</h2>
-        <section>
+        <section id="import-maps">
             <h3>Import maps</h3>
             <p>
                 A <code>&gt;script type="importmap"&lt;</code> HTML element provides an import map as a JSON string.
                 An import map controls how the browser should resolve module specifiers when importing JavaScript modules.
             </p>
             <baseline-status featureid="import-maps"></baseline-status>
+        </section>
+        <section>
+            <h3>JavaScript Modules</h3>
+            <p>
+                JavaScript modules allow code to be organized into reusable units.
+                Modules use import to load other modules and export to declare what is available to import from other modules.
+                In HTML, modules are loaded with <code>&gt;script type="module"&lt;</code>.
+                Pairs great with <a href="#import-maps">Import Maps</a>.
+            </p>
+            <baseline-status featureid="js-modules"></baseline-status>
         </section>
         <section>
             <h3>URLPattern</h3>
