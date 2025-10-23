@@ -143,6 +143,26 @@ function handleClick(e) {
             <baseline-status featureid="js-modules"></baseline-status>
         </section>
         <section>
+            <h3>Temporal</h3>
+            <p>
+                The Temporal API allows you to work with dates, times, time zones, and durations.
+                It fixes a lot of things that are broken in the current Date Api.
+                If you believe the Date Api is not broken, try winning <a href="https://jsdate.wtf/">jsdate.wtf</a>.
+                A <a href="https://www.npmjs.com/package/temporal-polyfill">polyfill</a> is available.
+            </p>
+            <baseline-status featureid="temporal"></baseline-status>
+            <pre>
+                <code translate="no" dir="ltr" class="microlight">
+// parse
+const isoString = "2025-10-23T19:00:00Z";
+const instant = Temporal.Instant.from(isoString);
+const zonedDateTime = instant.toZonedDateTimeISO('Africa/Johannesburg');
+// now but zoned
+const zonedDateTime = Temporal.Now.zonedDateTimeISO();
+                </code>
+            </pre>
+        </section>
+        <section>
             <h3>URLPattern Api</h3>
             <p>
                 A standardized, powerful, and interoperable solution to react to Url changes.
