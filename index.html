@@ -23,7 +23,8 @@
     <script type="importmap">
         {
           "imports": {
-            "app/": "./js/app/"
+            "app/": "./js/app/",
+            "vendor/": ".js/vendor/"
           }
         }
     </script>
@@ -68,7 +69,8 @@ Yes, viewing the source is a good idea for this site
             <h3>Cross-Document View Transitions</h3>
             <p>
                 The view transitions that work with <code>@view-transition</code> CSS rule sets.
-                Separate feature from the <a href="#single-document-view-transitions">single-document view transitions</a>.
+                Separate feature from the <a href="#single-document-view-transitions">single-document view
+                transitions</a>.
             </p>
             <baseline-status featureid="cross-document-view-transitions"></baseline-status>
             <a href="cross-document-view-transition1.html">View Transition</a>
@@ -103,7 +105,8 @@ function handleClick(e) {
             <h3>Import maps</h3>
             <p>
                 A <code>&lt;script type="importmap"&gt;</code> HTML element provides an import map as a JSON string.
-                An import map controls how the browser should resolve module specifiers when importing JavaScript modules.
+                An import map controls how the browser should resolve module specifiers when importing JavaScript
+                modules.
             </p>
             <baseline-status featureid="import-maps"></baseline-status>
         </section>
@@ -111,27 +114,28 @@ function handleClick(e) {
             <h3>JavaScript Modules</h3>
             <p>
                 JavaScript modules allow code to be organized into reusable units.
-                Modules use import to load other modules and export to declare what is available to import from other modules.
+                Modules use import to load other modules and export to declare what is available to import from other
+                modules.
                 In HTML, modules are loaded with <code>&lt;script type="module"&gt;</code>.
                 Pairs great with <a href="#import-maps">Import Maps</a>.
             </p>
             <baseline-status featureid="js-modules"></baseline-status>
         </section>
         <section>
-            <h3>URLPattern</h3>
-            aka the view transitions that work with <code>@view-transition</code> CSS rule sets.
-            <section>
-                <h3>URLPattern Api</h3>
+            <h3>URLPattern Api</h3>
+            <p>
                 A standardized, powerful, and interoperable solution to react to Url changes.
-                <baseline-status featureid="urlpattern"></baseline-status>
-                A code-example: <br>
-                <pre>
+            </p>
+            <baseline-status featureid="urlpattern"></baseline-status>
+            <p>
+                A code-example:
+            </p>
+            <pre>
                 <code translate="no" dir="ltr" class="microlight">
 const pattern = new URLPattern({ pathname: "/users/:id" });
 const isMatch = pattern.test(location.href);
                 </code>
             </pre>
-            </section>
         </section>
     </article>
     <article>
