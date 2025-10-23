@@ -56,9 +56,13 @@ Yes, viewing the source is a good idea for this site
             Html has a lot of great built-in components.
         </p>
         <section>
-            <h3><a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/details">&lt;details&gt;</a></h3>
+            <h3>
+                <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/details">&lt;details&gt;</a>
+            </h3>
             <p>
-                The <code class="microlight">&lt;details&gt;</code> element is a disclosure widget which can be expanded to reveal additional content. When closed, only the nested <code class="microlight">&lt;summary&gt;</code> element is visible.
+                The <code class="microlight">&lt;details&gt;</code> element is a disclosure widget which can be expanded
+                to reveal additional content. When closed, only the nested <code
+                    class="microlight">&lt;summary&gt;</code> element is visible.
             </p>
             <baseline-status featureid="details"></baseline-status>
             <details open>
@@ -67,9 +71,12 @@ Yes, viewing the source is a good idea for this site
             </details>
         </section>
         <section>
-            <h3>Mutually exclusive <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/details#name">&lt;details&gt;</a></h3>
+            <h3>Mutually exclusive <a
+                    href="https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/details#name">&lt;details&gt;</a>
+            </h3>
             <p>
-                Multiple <code class="microlight">&lt;details&gt;</code> elements which use the same name attribute are mutually exclusive.
+                Multiple <code class="microlight">&lt;details&gt;</code> elements which use the same name attribute are
+                mutually exclusive.
                 When one member of the group is opened, all other members are closed.
             </p>
             <baseline-status featureid="details-name"></baseline-status>
@@ -81,6 +88,65 @@ Yes, viewing the source is a good idea for this site
                 <summary>Element two</summary>
                 <p>Hidden text for two.</p>
             </details>
+        </section>
+        <section id="invoker-commands">
+            <h3><a href="https://developer.mozilla.org/en-US/docs/Web/API/Invoker_Commands_API">Invoker Commands Api</a>
+            </h3>
+            <p>
+                The <code class="microlight">command</code> and <code class="microlight">commandfor</code> attributes
+                for the <code class="microlight">&lt;button&gt;</code> HTML
+                element dispatch an action to an element when the button is invoked (by click or keystroke), as a
+                declarative alternative to <code class="microlight">addEventListener()</code> calls or onclick attribute
+                handlers.
+                Can be used to pair html components.
+            </p>
+            <p>
+                As <a href="https://open-ui.org/components/invokers.explainer/">OpenUI explains</a> <code
+                    class="microlight">command/commandfor</code>
+                do replicate <a href="#popover"><code class="microlight">popovertarget’s</code></a> functionality, the
+                two will co-exist side by side
+                for some while to enable a smooth transition.
+                It is, however, intended that <code class="microlight">commandfor</code> will replace
+                <code class="microlight">popovertarget</code> leading to popovertarget’s eventual deprecation.
+                </p>
+            <p>
+                If an element also has both a <code class="microlight">popovertarget</code> and the <code class="microlight">command/commandfor</code> attributes set,
+                then <code class="microlight">popovertarget</code> must be ignored: <code class="microlight">command</code> takes precedence.
+            </p>
+            <baseline-status featureid="invoker-commands"></baseline-status>
+            <pre>
+                <code translate="no" dir="ltr" class="microlight">
+&lt;button commandfor="mypopover" command="toggle-popover"&gt;
+  Toggle the popover
+&lt;/button&gt;
+&lt;div id="mypopover" popover&gt;
+  &lt;button commandfor="mypopover" command="hide-popover"&gt;Close&lt;/button&gt;
+  Popover content
+&lt;/div&gt;
+                </code>
+            </pre>
+        </section>
+        <section id="popover">
+            <h3><a href="https://developer.mozilla.org/en-US/docs/Web/API/Popover_API">Popover Api</a>
+            </h3>
+            <p>
+                The popover HTML attribute creates an overlay to display content on top of other page content.
+                Popovers can be shown declaratively using HTML, or using the
+                <code class="microlight">showPopover()</code> method.
+            </p>
+            <p>
+                While <code class="microlight">popovertarget</code> sufficiently captured the use case for popovers,
+                it fell short of providing the same developer & user experience for other interactive elements such as
+                &lt;dialog&gt;.
+                This is addressed with the <a href="#invoker-commands">invoker commands</a>.
+            </p>
+            <baseline-status featureid="popover"></baseline-status>
+            <pre>
+                <code translate="no" dir="ltr" class="microlight">
+&lt;button popovertarget="mypopover"&gt;Toggle the popover&lt;/button&gt;
+&lt;div id="mypopover" popover&gt;Popover content&lt;/div&gt;
+                </code>
+            </pre>
         </section>
     </article>
     <article>
