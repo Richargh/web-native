@@ -101,6 +101,20 @@ Yes, viewing the source is a good idea for this site
                 Can be used to pair html components.
             </p>
             <p>
+                The following <code class="microlight">command</code>s are possible:
+            </p>
+            <ul>
+                <li><code class="microlight">"show-modal"</code></li>
+                <li><code class="microlight">"close"</code></li>
+                <li><code class="microlight">"request-close"</code></li>
+                <li><code class="microlight">"show-popover"</code></li>
+                <li><code class="microlight">"hide-popover"</code></li>
+                <li><code class="microlight">"toggle-popover"</code></li>
+                <li>Custom values, prefixed with two hyphen characters <code class="microlight">"--"</code> will be
+                    dispatched on the controlled element.
+                </li>
+            </ul>
+            <p>
                 As <a href="https://open-ui.org/components/invokers.explainer/">OpenUI explains</a> <code
                     class="microlight">command/commandfor</code>
                 do replicate <a href="#popover"><code class="microlight">popovertarget’s</code></a> functionality, the
@@ -108,12 +122,15 @@ Yes, viewing the source is a good idea for this site
                 for some while to enable a smooth transition.
                 It is, however, intended that <code class="microlight">commandfor</code> will replace
                 <code class="microlight">popovertarget</code> leading to popovertarget’s eventual deprecation.
-                </p>
+            </p>
             <p>
-                If an element also has both a <code class="microlight">popovertarget</code> and the <code class="microlight">command/commandfor</code> attributes set,
-                then <code class="microlight">popovertarget</code> must be ignored: <code class="microlight">command</code> takes precedence.
+                If an element also has both a <code class="microlight">popovertarget</code> and the <code
+                    class="microlight">command/commandfor</code> attributes set,
+                then <code class="microlight">popovertarget</code> must be ignored: <code
+                    class="microlight">command</code> takes precedence.
             </p>
             <baseline-status featureid="invoker-commands"></baseline-status>
+            <p>This code:</p>
             <pre>
                 <code translate="no" dir="ltr" class="microlight">
 &lt;button commandfor="mypopover" command="toggle-popover"&gt;
@@ -125,6 +142,14 @@ Yes, viewing the source is a good idea for this site
 &lt;/div&gt;
                 </code>
             </pre>
+            <p>Results in this:</p>
+            <button commandfor="mypopover" command="toggle-popover">
+                Toggle the popover
+            </button>
+            <div id="mypopover" popover>
+                <button commandfor="mypopover" command="hide-popover">Close</button>
+                Popover content
+            </div>
         </section>
         <section id="popover">
             <h3><a href="https://developer.mozilla.org/en-US/docs/Web/API/Popover_API">Popover Api</a>
@@ -141,12 +166,18 @@ Yes, viewing the source is a good idea for this site
                 This is addressed with the <a href="#invoker-commands">invoker commands</a>.
             </p>
             <baseline-status featureid="popover"></baseline-status>
+            <p>This code:</p>
             <pre>
                 <code translate="no" dir="ltr" class="microlight">
 &lt;button popovertarget="mypopover"&gt;Toggle the popover&lt;/button&gt;
 &lt;div id="mypopover" popover&gt;Popover content&lt;/div&gt;
                 </code>
             </pre>
+            <p>
+                Results in this:
+            </p>
+            <button popovertarget="mypopover">Toggle the popover</button>
+            <div id="mypopover" popover>Popover content</div>
         </section>
     </article>
     <article>
