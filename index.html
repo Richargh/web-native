@@ -20,7 +20,14 @@
 
     <link rel="manifest" href="site.webmanifest">
     <meta name="theme-color" content="#fafafa">
-    <script src="js/app.js"></script>
+    <script type="importmap">
+        {
+          "imports": {
+            "app/": "./js/app/"
+          }
+        }
+    </script>
+    <script src="js/app.js" type="module"></script>
     <script
             src="https://cdn.jsdelivr.net/npm/baseline-status@1/baseline-status.min.js"
             type="module"

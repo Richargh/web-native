@@ -7,13 +7,10 @@
 * JavaScript (some WebComponents)
 * link:https://github.com/web-platform-dx/baseline-status[Baseline-Status]
 
-== Preconditions
-
-* Install the node version from link:.nvmrc[] via link:https://github.com/Schniz/fnm[fnm] (or link:https://github.com/nvm-sh/nvm[nvm]]) by calling `fnm use`
-
 == Usage
 
-* Start local dev server at `localhost:5173` -> `npm run dev`
+* Open the index.html with the IntelliJ Live Server
+* Or use the Live Server extension from VSCode
 
 == Inspiration
 
