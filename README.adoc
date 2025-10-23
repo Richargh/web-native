@@ -1,0 +1,15 @@
+= WebNative Html, CSS and JavaScript Examples
+
+== Features
+
+* Html
+* CSS
+* JavaScript (some WebComponents)
+
+== Preconditions
+
+* Install the node version from link:.nvmrc[] via link:https://github.com/Schniz/fnm[fnm] (or link:https://github.com/nvm-sh/nvm[nvm]]) by calling `fnm use`
+
+== Usage
+
+* Start local dev server at `localhost:5173` -> `npm run dev`
