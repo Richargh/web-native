@@ -36,30 +36,8 @@
 </header>
 <main>
     <section>
-        <h2>Single-document View Transitions</h2>
-        Aka the view transitions that work with JavaScript and the <code>startViewTransition()</code> method.
-        <baseline-status featureid="view-transitions"></baseline-status>
-        A longer code-example might look like this: <br>
-        <pre>
-            <code translate="no" dir="ltr">
-function handleClick(e) {
-    // Fallback for browsers that don't support this API:
-    if (!document.startViewTransition) {
-    updateTheDOMSomehow();
-    return;
-    }
-
-    // With a View Transition:
-    document.startViewTransition(() => updateTheDOMSomehow());
-}
-            </code>
-        </pre>
-    </section>
-    <section>
-        <h2>Cross-Document View Transitions</h2>
-        aka the view transitions that work with <code>@view-transition</code> CSS rule sets.
-        <baseline-status featureid="cross-document-view-transitions"></baseline-status>
-        <a href="cross-document-view-transition1.html">View Transition</a>
+        <h2>Cross-document View Transitions</h2>
+        In case you did not see a view transition, it might be because you use Firefox which does not have it built-in yet.
     </section>
 </main>
 </body>

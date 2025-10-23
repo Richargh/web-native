@@ -1,3 +1,7 @@
 body { 
     background-color: lightgreen;
 }
+
+@view-transition {
+    navigation: auto;
+}
