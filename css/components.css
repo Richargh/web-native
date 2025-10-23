@@ -1,0 +1,7 @@
+.scroll-gallery {
+    display: flex;
+    overflow-x: auto;
+    overscroll-behavior-inline: contain;
+    scroll-snap-type: inline mandatory;
+    scroll-behavior: smooth;
+}

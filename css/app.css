@@ -7,3 +7,4 @@
 @import "reset.css" layer(app.reset);
 @import "defaults.css" layer(app.defaults);
 @import "code-highlighting.css" layer(app.defaults);
+@import "components.css" layer(app.components);
