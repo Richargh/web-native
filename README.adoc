@@ -6,6 +6,7 @@
 * CSS
 * JavaScript (some WebComponents)
 * link:https://github.com/web-platform-dx/baseline-status[Baseline-Status]
+* link:https://github.com/github/relative-time-element[Relative time]
 * link:https://asvd.github.io/microlight/[microlight.js]
 
 == Usage

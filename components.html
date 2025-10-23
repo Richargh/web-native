@@ -34,7 +34,8 @@
             type="module"
             integrity="sha256-DmwRafkcuH0kwOXNDkdo7XTI4ajhQ5LGo8dWf11Z2mg="
     ></script>
-    <script src="js/vendor/microlight.min.js"></script>
+    <script src="./js/vendor/microlight.min.js"></script>
+    <script src="./js/vendor/github-elements/relative-time.js" type="module"></script>
 </head>
 
 <body>
@@ -101,6 +102,26 @@ Yes, viewing the source is a good idea for this site
             <li><a href="https://webawesome.com/">WebAwesome (previously Shoelace)</a></li>
             <li><a href="https://quietui.org/components">QuietUI</a></li>
         </ul>
+        <section>
+            <h3><a href="https://github.com/github/relative-time-element">Relative Time</a></h3>
+            <p>
+                Formats a timestamp as a localized string or as relative text that auto-updates in the user's browser.
+            </p>
+            <p>The following code:</p>
+            <pre>
+                <code translate="no" dir="ltr" class="microlight">
+&lt;relative-time datetime="2025-10-23T22:30:00+02:00"&gt;
+    October 23rd, 2025 10:30pm
+&lt;/relative-time&gt;
+                </code>
+            </pre>
+            <p>
+                Looks like this in html:
+            </p>
+            <relative-time datetime="2025-10-23T22:30:00+02:00">
+                October 23rd, 2025 10:30pm
+            </relative-time>
+        </section>
     </article>
 </main>
 </body>

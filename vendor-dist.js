@@ -7,6 +7,7 @@ const jsPath = resolve('./js/vendor');
 function main() {
     clean();
     distributeMicrolight();
+    distributeRelativeTime();
 }
 
 function clean() {
@@ -18,6 +19,11 @@ function clean() {
 function distributeMicrolight() {
     console.log(`Distributing Microlight`);
     cpSync('node_modules/microlight/microlight.js', resolve(jsPath, 'microlight.min.js'));
+}
+
+function distributeRelativeTime() {
+    console.log(`Distributing Microlight`);
+    cpSync('node_modules/@github/relative-time-element/dist/bundle.js', resolve(jsPath, 'github-elements/relative-time.js'));
 }
 
 main();
