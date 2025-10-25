@@ -49,8 +49,39 @@ Yes, viewing the source is a good idea for this site
     </nav>
 </header>
 <main>
+    <h1>Css Features</h1>
+    <p>
+        This page only collects a subset of CSS features, arguably the most interesting ones.
+        See <a href="https://nerdy.dev/cascading-secret-sauce">this list</a> if you want to see even more.
+    </p>
     <article>
-        <h2>Css Features</h2>
+        <h2>Css Language</h2>
+        <section id="nesting">
+            <h3>Nesting</h3>
+            <p>
+                CSS nesting allows for shorter selectors, easier reading, and more modularity by nesting rules inside
+                others.
+                Standard CSS selectors can be used, but also the new The <code class="microlight">&</code> nesting
+                selector.
+            </p>
+            <baseline-status featureid="nesting"></baseline-status>
+            <pre>
+                <code translate="no" dir="ltr" class="microlight">
+.a {
+  /* styles for element with class="a" */
+  .b {
+    /* styles for element with class="b" which is a descendant of class="a" */
+  }
+  &.b {
+    /* styles for element with class="a b" */
+  }
+}
+                </code>
+            </pre>
+        </section>
+    </article>
+    <article>
+        <h2>Css @rules</h2>
         <section>
             <h3>Cascade layers</h3>
             <p>
@@ -76,31 +107,11 @@ Yes, viewing the source is a good idea for this site
             <h3>Cross-Document View Transitions</h3>
             <p>
                 The view transitions that work with <code>@view-transition</code> CSS rule sets.
-                Separate feature from the <a href="./js-features.html#single-document-view-transitions">single-document view
+                Separate feature from the <a href="./js-features.html#single-document-view-transitions">single-document
+                view
                 transitions</a>.
             </p>
             <baseline-status featureid="cross-document-view-transitions"></baseline-status>
-        </section>
-        <section id="nesting">
-            <h3>Nesting</h3>
-            <p>
-                CSS nesting allows for shorter selectors, easier reading, and more modularity by nesting rules inside others.
-                Standard CSS selectors can be used, but also the new The <code class="microlight">&</code> nesting selector.
-            </p>
-            <baseline-status featureid="nesting"></baseline-status>
-            <pre>
-                <code translate="no" dir="ltr" class="microlight">
-.a {
-  /* styles for element with class="a" */
-  .b {
-    /* styles for element with class="b" which is a descendant of class="a" */
-  }
-  &.b {
-    /* styles for element with class="a b" */
-  }
-}
-                </code>
-            </pre>
         </section>
     </article>
 </main>
