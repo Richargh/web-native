@@ -78,6 +78,23 @@ regionNamesInEnglish.of("BZ"); // "Belize"
                 </code>
             </pre>
         </section>
+        <section id="intl-list-format">
+            <h3>Intl.ListFormat</h3>
+            <p>
+                The <code class="microlight">Intl.Listformat</code> object enables language-sensitive list formatting.
+                <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/ListFormat">See docs</a>.
+            </p>
+            <baseline-status featureid="intl-list-format"></baseline-status>
+            <pre>
+                <code translate="no" dir="ltr" class="microlight">
+const vehicles = ["Motorcycle", "Bus", "Car"];
+const enConjunctionFormatter = new Intl.ListFormat("en", { style: "long", type: "conjunction" });
+const deDisjunctionFormatter = new Intl.ListFormat("en", { style: "long", type: "disjunction" });
+enConjunctionFormatter.format(vehicles); // "Motorcycle, Bus, and Car"
+deDisjunctionFormatter.format(vehicles); // "Motorcycle, Bus oder Car"
+                </code>
+            </pre>
+        </section>
         <section id="intl-relative-time-format">
             <h3>Intl.RelativeTimeFormat</h3>
             <p>
