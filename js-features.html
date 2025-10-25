@@ -60,6 +60,29 @@ Yes, viewing the source is a good idea for this site
             </p>
             <baseline-status featureid="import-maps"></baseline-status>
         </section>
+        <section id="intl">
+            <h3>Intl</h3>
+            <p>
+                The Intl namespace object contains several constructors
+                as well as functionality common to the internationalization constructors
+                and other language sensitive functions.
+                Collectively, they comprise the ECMAScript Internationalization API,
+                which provides language sensitive string comparison, number formatting, date and time formatting, and more.
+                See below for <b>some</b> of the Apis.
+                See the <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl">docs</a> if you want all.
+            </p>
+            <p>
+                When using <code class="microlight">Intl</code>, the following code snippets can be useful:
+            </p>
+            <pre>
+                <code translate="no" dir="ltr" class="microlight">
+// Get the page's language from the HTML lang attribute
+const pageLocale = document.documentElement.lang || 'en-US'; // Fallback to 'en-US'
+// Use the user's preferred language
+const browserLocale = navigator.language || 'en-US'; // Fallback to 'en-US'
+                </code>
+            </pre>
+        </section>
         <section id="intl-display-names">
             <h3>Intl.DisplayNames</h3>
             <p>
@@ -79,7 +102,7 @@ regionNamesInEnglish.of("BZ"); // "Belize"
             </pre>
         </section>
         <section id="intl-list-format">
-            <h3>Intl.ListFormat</h3>
+            <h3>Intl.ListFormat (Natural Language Lists)</h3>
             <p>
                 The <code class="microlight">Intl.Listformat</code> object enables language-sensitive list formatting.
                 <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/ListFormat">See docs</a>.
