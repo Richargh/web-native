@@ -60,6 +60,24 @@ Yes, viewing the source is a good idea for this site
             </p>
             <baseline-status featureid="import-maps"></baseline-status>
         </section>
+        <section id="intl-display-names">
+            <h3>Intl.DisplayNames</h3>
+            <p>
+                The <code class="microlight">Intl.DisplayNames</code> object
+                enables the consistent translation of language, region and script display names.
+                <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/DisplayNames">See docs</a>.
+            </p>
+            <baseline-status featureid="intl-display-names"></baseline-status>
+            <pre>
+                <code translate="no" dir="ltr" class="microlight">
+// two-letter ISO 3166 region code, or a three-digit UN M49 geographic region
+const regionNamesInEnglish = new Intl.DisplayNames(["en"], { type: "region" });
+regionNamesInEnglish.of("US"); // "United States"
+regionNamesInEnglish.of("419"); // "Latin America"
+regionNamesInEnglish.of("BZ"); // "Belize"
+                </code>
+            </pre>
+        </section>
         <section id="intl-relative-time-format">
             <h3>Intl.RelativeTimeFormat</h3>
             <p>
