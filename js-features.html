@@ -83,6 +83,20 @@ const browserLocale = navigator.language || 'en-US'; // Fallback to 'en-US'
                 </code>
             </pre>
         </section>
+        <section id="intl-datetime-format">
+            <h3>Intl.DateTimeFormat (Dates and Times)</h3>
+            <p>
+                The <code class="microlight">Intl.DateTimeFormat</code> object enables language-sensitive date and time formatting.
+                <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/DateTimeFormat">See docs</a>.
+            </p>
+            <baseline-status featureid="intl"></baseline-status>
+            <pre>
+                <code translate="no" dir="ltr" class="microlight">
+// might also accept a temporal object in the future
+console.log(new Intl.DateTimeFormat("en-US").format(date)); // "12/20/2020"
+                </code>
+            </pre>
+        </section>
         <section id="intl-display-names">
             <h3>Intl.DisplayNames</h3>
             <p>
