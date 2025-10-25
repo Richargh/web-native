@@ -2,9 +2,9 @@
 
 /* establish a layer order up-front, from lowest to highest priority */
 @layer app;
-@layer app.reset, app.defaults, app.components, app.utilities, app.overrides;
+@layer app.starter, app.defaults, app.components, app.utilities, app.overrides;
 
-@import "reset.css" layer(app.reset);
+@import "starter.css" layer(app.starter);
 @import "defaults.css" layer(app.defaults);
 @import "code-highlighting.css" layer(app.defaults);
 @import "components.css" layer(app.components);

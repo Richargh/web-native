@@ -20,10 +20,6 @@ img {
     background-color: #2FB38D;
 }
 
-@view-transition {
-    navigation: auto;
-}
-
 body {
     background-color: lightgreen;
 }
