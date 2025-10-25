@@ -150,6 +150,42 @@ jaNumberFormat.format(number); // "￥123,457"
                 </code>
             </pre>
         </section>
+        <section id="intl-plural-rules">
+            <h3>Intl.PluralRules (Plurals With Cultural Nuance)</h3>
+            <p>
+                The <code class="microlight">Intl.PluralRules</code> ocale-aware object that tells you
+                which of the language's pluralization rules apply based on a given number.
+                Languages use different patterns for expressing both plural numbers of items (cardinal numbers)
+                and for expressing the order of items (ordinal numbers).
+                <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/PluralRules">See docs</a>.
+            </p>
+            <baseline-status featureid="intl-plural-rules"></baseline-status>
+            <pre>
+                <code translate="no" dir="ltr" class="microlight">
+// The full set of tags that might be returned are:
+// zero, one, two, few, many, and other (the "general" plural form, also used if the language only has one form).
+const enOrdinalRules = new Intl.PluralRules('en-US', { type: "ordinal" });
+console.log(enCardinalRules.select(0)); // "other"
+console.log(enCardinalRules.select(1)); // "one"
+console.log(enCardinalRules.select(2)); // "two"
+console.log(enCardinalRules.select(3)); // "few"
+
+// when you provide a mapping table you can create the right pluralizations:
+const enSuffixes = new Map([
+  ["one", "st"],
+  ["two", "nd"],
+  ["few", "rd"],
+  ["other", "th"],
+]);
+
+const arEgPluralRules = new Intl.PluralRules('ar-EG', { type: "ordinal" });
+console.log(arCardinalRules.select(0)); // "other"
+console.log(arCardinalRules.select(1)); // "other"
+console.log(arCardinalRules.select(2)); // "other"
+console.log(arCardinalRules.select(4)); // "other"
+                </code>
+            </pre>
+        </section>
         <section id="intl-relative-time-format">
             <h3>Intl.RelativeTimeFormat</h3>
             <p>
