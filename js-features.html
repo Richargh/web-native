@@ -132,6 +132,24 @@ deDisjunctionFormatter.format(vehicles); // "Motorcycle, Bus oder Car"
                 </code>
             </pre>
         </section>
+        <section id="intl-number-format">
+            <h3>Intl.NumberFormat (Numbers With Cultural Nuance)</h3>
+            <p>
+                The <code class="microlight">Intl.NumberFormat</code> object enables language-sensitive number formatting.
+                <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/NumberFormat">See docs</a>.
+            </p>
+            <baseline-status featureid="intl"></baseline-status>
+            <pre>
+                <code translate="no" dir="ltr" class="microlight">
+const number = 123456.789;
+const deNumberFormat = new Intl.NumberFormat("de-DE", { style: "currency", currency: "EUR" });
+const jaNumberFormat = new Intl.NumberFormat("ja-JP", { style: "currency", currency: JPY" });
+deNumberFormat.format(number); // "123.456,79 €"
+jaNumberFormat.format(number); // "￥123,457"
+// The Japanese yen doesn't use a minor unit
+                </code>
+            </pre>
+        </section>
         <section id="intl-relative-time-format">
             <h3>Intl.RelativeTimeFormat</h3>
             <p>
