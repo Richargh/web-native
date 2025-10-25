@@ -75,6 +75,24 @@ console.log(rtf1.format(3, "quarter")); // "in 3 qtrs."
                 </code>
             </pre>
         </section>
+        <section id="intl-segmenter">
+            <h3>Intl.Segmenter</h3>
+            <p>
+                The <code class="microlight">Intl.Segmenter</code> object enables locale-sensitive text segmentation,
+                enabling you to get meaningful items (graphemes, words or sentences) from a string.
+                <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/Segmenter">See docs</a>.
+            </p>
+            <baseline-status featureid="intl-segmenter"></baseline-status>
+            <pre>
+                <code translate="no" dir="ltr" class="microlight">
+const segmenterEn = new Intl.Segmenter("en", { granularity: "word" });
+Array.from(segmenterEn.segment("The most amazing Api.")); // ["The", " ", "most", ...]
+
+const segmenterJa = new Intl.Segmenter("ja-JP", { granularity: "word" });
+Array.from(segmenterJa.segment("吾輩は猫である。名前はたぬき。")); // ["吾輩", "は", "猫", ...]
+                </code>
+            </pre>
+        </section>
         <section>
             <h3>JavaScript Modules</h3>
             <p>
