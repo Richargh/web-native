@@ -82,8 +82,8 @@ input:where(
   [type="reset"],
   [type="button"]
 ) {
-    background: CanvasText;
-    color: Canvas;
+    /*background: CanvasText;*/
+    /*color: Canvas;*/
     border: 1px solid transparent;
 }
 textarea {
