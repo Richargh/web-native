@@ -57,6 +57,65 @@ Yes, viewing the source is a good idea for this site
         </p>
         <section>
             <h3>
+                <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/dialog">&lt;dialog&gt;</a>
+            </h3>
+            <p>
+                The <code class="microlight">&lt;dialog&gt;</code> HTML element represents a modal or non-modal dialog
+                box, such as a confirmation prompt or a subwindow used to enter data.
+            </p>
+            <p>
+                By default the <code class="microlight">&lt;dialog&gt;</code> can be closed via the close buttons and <kbd>Esc</kbd>.
+                You cannot dismiss it by clicking outside of the dialog, i.e. light dismiss.
+                The <code class="microlight">closedby</code> attribute can change that behavior.
+            </p>
+            <p>
+                The <code class="microlight">&lt;dialog&gt;</code> can be opened and closed with JavaScript methods:
+            </p>
+            <ul>
+                <li>
+                    <code class="microlight">show()</code>(modelessly, still allowing interaction with content outside
+                    of the dialog)
+                </li>
+                <li>
+                    <code class="microlight">showModal()</code>(over the top of any other dialogs that might be
+                    present).
+                </li>
+            </ul>
+            </p>
+            <p>
+                Can also be opened and closed via html:
+            </p>
+            <ul>
+                <li><a href="#invoker-commands">invoker commands</a></li>
+                <li>closed by a <code class="microlight">&lt;form method="dialog"&gt;</code></li>
+                <li>closed by a <code class="microlight">&lt;button formmethod="dialog"&gt;</code> inside a <code class="microlight">&lt;form&gt;</code></li>
+            </ul>
+            <baseline-status featureid="dialog"></baseline-status>
+            <p>This code:</p>
+            <pre>
+                <code translate="no" dir="ltr" class="microlight">
+&lt;button commandfor="my-dialog" command="show-modal"&gt;
+  Show Modal
+&lt;/button&gt;
+&lt;dialog id="my-dialog" closedby="any"&gt;
+  &lt;form&gt;
+    &lt;button formmethod="dialog" autofocus&gt;Close&lt;/button&gt;
+  &lt;/form&gt;
+  &lt;p&gt;This modal dialog exists!&lt;/p&gt;
+&lt;/dialog&gt;
+                </code>
+            </pre>
+            <p>Results in this:</p>
+            <button commandfor="my-dialog" command="show-modal">Show Modal</button>
+            <dialog id="my-dialog" closedby="any">
+                <form>
+                    <button formmethod="dialog" autofocus>Close</button>
+                </form>
+                <p>This modal dialog exists!</p>
+            </dialog>
+        </section>
+        <section>
+            <h3>
                 <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/details">&lt;details&gt;</a>
             </h3>
             <p>
