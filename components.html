@@ -57,6 +57,47 @@ Yes, viewing the source is a good idea for this site
         </p>
         <section>
             <h3>
+                Autocomplete
+            </h3>
+            <p>
+                The <code class="microlight">&lt;datalist&gt;</code> element sets recommended values for an
+                <code class="microlight">&lt;input&gt;</code> element. Browsers may show a dropdown menu of all values
+                or match values as the user types.
+            </p>
+            <p>
+                The element is actually supported since a very long time,
+                but Firefox and Safari do not support all features or have some bugs (only partial support).
+                This is tracked by <a href="https://caniuse.com/datalist">Can I use</a>.
+            </p>
+            <baseline-status featureid="datalist"></baseline-status>
+            <p>This code:</p>
+            <pre>
+                <code translate="no" dir="ltr" class="microlight">
+&lt;label for="browser-choice">Choose a browser:&lt;/label>
+&lt;input list="browsers" id="browser-choice" name="browser-choice" />
+
+&lt;datalist id="browsers">
+    &lt;option value="Firefox">&lt;/option>
+&lt;/datalist>
+                </code>
+            </pre>
+            <p>Results in this:</p>
+            <label for="browser-choice">Choose a browser:</label>
+            <input type="search" list="browsers" id="browser-choice" name="browser-choice" />
+
+            <datalist id="browsers">
+                <option value="Arc"></option>
+                <option value="Brave"></option>
+                <option value="Chrome"></option>
+                <option value="Edge"></option>
+                <option value="Firefox"></option>
+                <option value="Opera"></option>
+                <option value="Safari"></option>
+                <option value="Vivaldi"></option>
+            </datalist>
+        </section>
+        <section>
+            <h3>
                 <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/dialog">&lt;dialog&gt;</a>
             </h3>
             <p>
