@@ -163,7 +163,7 @@ Yes, viewing the source is a good idea for this site
             </p>
             <baseline-status featureid="dialog-closedby"></baseline-status>
         </section>
-        <section>
+        <section id="meter">
             <h3>
                 Semantic measurement <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/meter">&lt;meter&gt;</a>
             </h3>
@@ -172,7 +172,8 @@ Yes, viewing the source is a good idea for this site
                 or a fractional value.
                 The alternate name for this is gauge.
                 Can be used to show disk usage, relevance of a query result, etc.
-                The meter element should not be used to indicate progress (as in a progress bar).
+                The meter element should not be used to indicate progress.
+                Use the <a href="#progress"><code class="microlight">&lt;progress&gt;</code></a> element for that.
             </p>
             <baseline-status featureid="meter"></baseline-status>
             <p>This code:</p>
@@ -185,6 +186,26 @@ Yes, viewing the source is a good idea for this site
             <p>Results in this:</p>
             <label for="meter-01">Low</label>
             <meter id="meter-01" min="0" max="100" low="30" high="75" optimum="80" value="50"></meter>
+        </section>
+        <section id="progress">
+            <h3>
+                The <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/progress">&lt;progress&gt; bar</a>
+            </h3>
+            <p>
+                The <code class="microlight">&lt;progress&gt;</code> element displays an indicator showing
+                the completion progress of a task, typically displayed as a progress bar.
+            </p>
+            <baseline-status featureid="progress"></baseline-status>
+            <p>This code:</p>
+            <pre>
+                <code translate="no" dir="ltr" class="microlight">
+&lt;label for="file">File progress:&lt;/label>
+&lt;progress id="file" max="100" value="70">70%&lt;/progress>
+                </code>
+            </pre>
+            <p>Results in this:</p>
+            <label for="file-progress">File progress:</label>
+            <progress id="file-progress" max="100" value="70">70%</progress>
         </section>
         <section>
             <h3>
