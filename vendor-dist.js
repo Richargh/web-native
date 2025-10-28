@@ -23,7 +23,7 @@ function distributeMicrolight() {
 }
 
 function distributeRelativeTime() {
-    console.log(`Distributing Microlight`);
+    console.log(`Distributing Relative Time`);
     cpSync('node_modules/@github/relative-time-element/dist/bundle.js', resolve(jsPath, 'github-elements/relative-time.js'));
 }
 
