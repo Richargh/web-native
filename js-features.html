@@ -49,9 +49,9 @@ Yes, viewing the source is a good idea for this site
     </nav>
 </header>
 <main>
-    <article>
+    <section>
         <h2>JavaScript Features</h2>
-        <section id="import-maps">
+        <article id="import-maps">
             <h3>Import maps</h3>
             <p>
                 A <code>&lt;script type="importmap"&gt;</code> HTML element provides an import map as a JSON string.
@@ -59,8 +59,8 @@ Yes, viewing the source is a good idea for this site
                 modules.
             </p>
             <baseline-status featureid="import-maps"></baseline-status>
-        </section>
-        <section id="intl">
+        </article>
+        <article id="intl">
             <h3>Intl</h3>
             <p>
                 The Intl namespace object contains several constructors
@@ -82,8 +82,8 @@ const pageLocale = document.documentElement.lang || 'en-US'; // Fallback to 'en-
 const browserLocale = navigator.language || 'en-US'; // Fallback to 'en-US'
                 </code>
             </pre>
-        </section>
-        <section id="intl-datetime-format">
+        </article>
+        <article id="intl-datetime-format">
             <h3>Intl.DateTimeFormat (Dates and Times)</h3>
             <p>
                 The <code class="microlight">Intl.DateTimeFormat</code> object enables language-sensitive date and time formatting.
@@ -96,8 +96,8 @@ const browserLocale = navigator.language || 'en-US'; // Fallback to 'en-US'
 console.log(new Intl.DateTimeFormat("en-US").format(date)); // "12/20/2020"
                 </code>
             </pre>
-        </section>
-        <section id="intl-display-names">
+        </article>
+        <article id="intl-display-names">
             <h3>Intl.DisplayNames</h3>
             <p>
                 The <code class="microlight">Intl.DisplayNames</code> object
@@ -114,8 +114,8 @@ regionNamesInEnglish.of("419"); // "Latin America"
 regionNamesInEnglish.of("BZ"); // "Belize"
                 </code>
             </pre>
-        </section>
-        <section id="intl-list-format">
+        </article>
+        <article id="intl-list-format">
             <h3>Intl.ListFormat (Natural Language Lists)</h3>
             <p>
                 The <code class="microlight">Intl.Listformat</code> object enables language-sensitive list formatting.
@@ -131,8 +131,8 @@ enConjunctionFormatter.format(vehicles); // "Motorcycle, Bus, and Car"
 deDisjunctionFormatter.format(vehicles); // "Motorcycle, Bus oder Car"
                 </code>
             </pre>
-        </section>
-        <section id="intl-number-format">
+        </article>
+        <article id="intl-number-format">
             <h3>Intl.NumberFormat (Numbers With Cultural Nuance)</h3>
             <p>
                 The <code class="microlight">Intl.NumberFormat</code> object enables language-sensitive number formatting.
@@ -149,8 +149,8 @@ jaNumberFormat.format(number); // "￥123,457"
 // The Japanese yen doesn't use a minor unit
                 </code>
             </pre>
-        </section>
-        <section id="intl-plural-rules">
+        </article>
+        <article id="intl-plural-rules">
             <h3>Intl.PluralRules (Plurals With Cultural Nuance)</h3>
             <p>
                 The <code class="microlight">Intl.PluralRules</code> ocale-aware object that tells you
@@ -185,8 +185,8 @@ console.log(arCardinalRules.select(2)); // "other"
 console.log(arCardinalRules.select(4)); // "other"
                 </code>
             </pre>
-        </section>
-        <section id="intl-relative-time-format">
+        </article>
+        <article id="intl-relative-time-format">
             <h3>Intl.RelativeTimeFormat</h3>
             <p>
                 The <code class="microlight">Intl.RelativeTimeFormat</code> object enables language-sensitive relative
@@ -200,8 +200,8 @@ const rtf1 = new Intl.RelativeTimeFormat("en", { style: "short" });
 console.log(rtf1.format(3, "quarter")); // "in 3 qtrs."
                 </code>
             </pre>
-        </section>
-        <section id="intl-segmenter">
+        </article>
+        <article id="intl-segmenter">
             <h3>Intl.Segmenter</h3>
             <p>
                 The <code class="microlight">Intl.Segmenter</code> object enables locale-sensitive text segmentation,
@@ -218,8 +218,8 @@ const segmenterJa = new Intl.Segmenter("ja-JP", { granularity: "word" });
 Array.from(segmenterJa.segment("吾輩は猫である。名前はたぬき。")); // ["吾輩", "は", "猫", ...]
                 </code>
             </pre>
-        </section>
-        <section>
+        </article>
+        <article>
             <h3>JavaScript Modules</h3>
             <p>
                 JavaScript modules allow code to be organized into reusable units.
@@ -229,8 +229,8 @@ Array.from(segmenterJa.segment("吾輩は猫である。名前はたぬき。"))
                 Pairs great with <a href="#import-maps">Import Maps</a>.
             </p>
             <baseline-status featureid="js-modules"></baseline-status>
-        </section>
-        <section id="single-document-view-transitions">
+        </article>
+        <article id="single-document-view-transitions">
             <h3>Single-document View Transitions</h3>
             <p>
                 Aka the view transitions that work with JavaScript and the <code>startViewTransition()</code> method.
@@ -253,8 +253,8 @@ function handleClick(e) {
 }
                 </code>
             </pre>
-        </section>
-        <section>
+        </article>
+        <article>
             <h3>Temporal</h3>
             <p>
                 The Temporal API allows you to work with dates, times, time zones, and durations.
@@ -273,8 +273,8 @@ const zonedDateTime = instant.toZonedDateTimeISO('Africa/Johannesburg');
 const zonedDateTime = Temporal.Now.zonedDateTimeISO();
                 </code>
             </pre>
-        </section>
-        <section>
+        </article>
+        <article>
             <h3>URLPattern Api</h3>
             <p>
                 A standardized, powerful, and interoperable solution to react to Url changes.
@@ -289,8 +289,8 @@ const pattern = new URLPattern({ pathname: "/users/:id" });
 const isMatch = pattern.test(location.href);
                 </code>
             </pre>
-        </section>
-    </article>
+        </article>
+    </section>
 </main>
 </body>
 

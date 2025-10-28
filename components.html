@@ -50,12 +50,12 @@ Yes, viewing the source is a good idea for this site
     </nav>
 </header>
 <main>
-    <article>
+    <section>
         <h2>Html Components</h2>
         <p>
             Html has a lot of great built-in components.
         </p>
-        <section>
+        <article>
             <h3>
                 Autocomplete
             </h3>
@@ -95,8 +95,8 @@ Yes, viewing the source is a good idea for this site
                 <option value="Safari"></option>
                 <option value="Vivaldi"></option>
             </datalist>
-        </section>
-        <section>
+        </article>
+        <article>
             <h3>
                 <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/dialog">&lt;dialog&gt;</a>
             </h3>
@@ -150,8 +150,8 @@ Yes, viewing the source is a good idea for this site
                 </form>
                 <p>This modal dialog exists!</p>
             </dialog>
-        </section>
-        <section>
+        </article>
+        <article>
             <h3>
                 <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/dialog">Light-dismiss &lt;dialog&gt;</a>
             </h3>
@@ -162,8 +162,8 @@ Yes, viewing the source is a good idea for this site
                 The <code class="microlight">closedby</code> attribute can change that behavior.
             </p>
             <baseline-status featureid="dialog-closedby"></baseline-status>
-        </section>
-        <section id="meter">
+        </article>
+        <article id="meter">
             <h3>
                 Semantic measurement <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/meter">&lt;meter&gt;</a>
             </h3>
@@ -186,8 +186,8 @@ Yes, viewing the source is a good idea for this site
             <p>Results in this:</p>
             <label for="meter-01">Low</label>
             <meter id="meter-01" min="0" max="100" low="30" high="75" optimum="80" value="50"></meter>
-        </section>
-        <section id="progress">
+        </article>
+        <article id="progress">
             <h3>
                 The <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/progress">&lt;progress&gt; bar</a>
             </h3>
@@ -206,8 +206,8 @@ Yes, viewing the source is a good idea for this site
             <p>Results in this:</p>
             <label for="file-progress">File progress:</label>
             <progress id="file-progress" max="100" value="70">70%</progress>
-        </section>
-        <section>
+        </article>
+        <article>
             <h3>
                 <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/details">&lt;details&gt;</a>
             </h3>
@@ -221,8 +221,8 @@ Yes, viewing the source is a good idea for this site
                 <summary>A summary here</summary>
                 <p>A long-winded text that is hidden when you click on the summary.</p>
             </details>
-        </section>
-        <section>
+        </article>
+        <article>
             <h3>Mutually exclusive <a
                     href="https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/details#name">&lt;details&gt;</a>
             </h3>
@@ -240,11 +240,11 @@ Yes, viewing the source is a good idea for this site
                 <summary>Element two</summary>
                 <p>Hidden text for two.</p>
             </details>
-        </section>
-    </article>
-    <article>
+        </article>
+    </section>
+    <section>
         <h2>Html Input Components</h2>
-        <section>
+        <article>
             <h3>
                 Range Slider
             </h3>
@@ -285,11 +285,11 @@ Yes, viewing the source is a good idea for this site
                 <option>2</option>
                 <option>3</option>
             </datalist>
-        </section>
-    </article>
-    <article>
+        </article>
+    </section>
+    <section>
         <h2>Html Declarative Actions</h2>
-        <section id="invoker-commands">
+        <article id="invoker-commands">
             <h3><a href="https://developer.mozilla.org/en-US/docs/Web/API/Invoker_Commands_API">Invoker Commands Api</a>
             </h3>
             <p>
@@ -351,8 +351,8 @@ Yes, viewing the source is a good idea for this site
                 <button commandfor="mypopover" command="hide-popover">Close</button>
                 Popover content
             </div>
-        </section>
-        <section id="popover">
+        </article>
+        <article id="popover">
             <h3><a href="https://developer.mozilla.org/en-US/docs/Web/API/Popover_API">Popover Api</a>
             </h3>
             <p>
@@ -380,14 +380,14 @@ Yes, viewing the source is a good idea for this site
             </p>
             <button popovertarget="mypopover">Toggle the popover</button>
             <div id="mypopover" popover>Popover content</div>
-        </section>
-    </article>
-    <article>
+        </article>
+    </section>
+    <section>
         <h2>Html Image Components</h2>
         <p>
             Html has a lot of great built-in image components.
         </p>
-        <section>
+        <article>
             <h3>Lazy-loading images and iframes</h3>
             <p>
                 The loading="lazy" attribute for <code class="microlight">&lt;img&gt;</code>
@@ -405,14 +405,14 @@ Yes, viewing the source is a good idea for this site
                 Will result in this:
             </p>
             <img src="./img/box-green.png" loading='lazy' alt='Alternative Text'>
-        </section>
-    </article>
-    <article>
+        </article>
+    </section>
+    <section>
         <h2>Css Components</h2>
         <p>
             Components only made via CSS.
         </p>
-        <section>
+        <article>
             <h3>Gallery</h3>
             <div class="scroll-gallery">
                 <img src="./img/box-blue.png"
@@ -441,9 +441,9 @@ Yes, viewing the source is a good idea for this site
                      height="285"
                      loading="lazy">
             </div>
-        </section>
-    </article>
-    <article>
+        </article>
+    </section>
+    <section>
         <h2>Web Components</h2>
         <p>
             Web Components can add components to html that are not there yet.
@@ -455,7 +455,7 @@ Yes, viewing the source is a good idea for this site
             <li><a href="https://webawesome.com/">WebAwesome (previously Shoelace)</a></li>
             <li><a href="https://quietui.org/components">QuietUI</a></li>
         </ul>
-        <section>
+        <article>
             <h3><a href="https://github.com/github/relative-time-element">Relative Time</a></h3>
             <p>
                 Formats a timestamp as a localized string or as relative text that auto-updates in the user's browser.
@@ -474,8 +474,8 @@ Yes, viewing the source is a good idea for this site
             <relative-time datetime="2025-10-23T22:30:00+02:00">
                 October 23rd, 2025 10:30pm
             </relative-time>
-        </section>
-    </article>
+        </article>
+    </section>
 </main>
 </body>
 
