@@ -17,9 +17,9 @@ img {
 }
 .button:hover {
     transform: scale(1.05);
-    background-color: #2FB38D;
+    background-color: var(--lime-7);
 }
 
 body {
-    background-color: lightgreen;
+    background-color: var(--lime-2);
 }

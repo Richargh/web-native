@@ -1,7 +1,8 @@
 {
   "dependencies": {
     "@github/relative-time-element": "^4.5.0",
-    "microlight": "^0.0.7"
+    "microlight": "^0.0.7",
+    "open-props": "^1.7.16"
   },
   "scripts": {
     "dist": "node vendor-dist.js"

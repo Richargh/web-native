@@ -4,6 +4,8 @@
 @layer app;
 @layer app.starter, app.defaults, app.components, app.utilities, app.overrides;
 
+@import "vendor/open-props/open-props.min.css";
+
 @import "starter.css" layer(app.starter);
 @import "defaults.css" layer(app.defaults);
 @import "code-highlighting.css" layer(app.defaults);

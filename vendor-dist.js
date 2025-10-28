@@ -8,6 +8,7 @@ function main() {
     clean();
     distributeMicrolight();
     distributeRelativeTime();
+    distributeOpenProps();
 }
 
 function clean() {
@@ -24,6 +25,11 @@ function distributeMicrolight() {
 function distributeRelativeTime() {
     console.log(`Distributing Microlight`);
     cpSync('node_modules/@github/relative-time-element/dist/bundle.js', resolve(jsPath, 'github-elements/relative-time.js'));
+}
+
+function distributeOpenProps() {
+    console.log(`Distributing OpenProps`);
+    cpSync('node_modules/open-props/open-props.min.css', resolve(cssPath, 'open-props/open-props.min.css'));
 }
 
 main();
